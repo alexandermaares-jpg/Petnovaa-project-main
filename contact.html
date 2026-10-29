@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e9e0d8"><meta name="description" content="Connect with the PETNOVA community.">
+<title>Contact | PETNOVA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Skip to content</a>
+<header class="site-header">
+ <a class="brand" href="index.html#inicio" aria-label="PETNOVA home"><img class="brand-logo" src="img/logo%20petnova%20sin%20fondo.png" alt="PETNOVA, we care for what you love"></a>
+ <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+ <nav class="main-nav" id="mainNav"><a href="index.html#inicio">Home</a><a href="about-us.html">About Us</a><a href="functions.html">Functions</a><a href="contact.html" aria-current="page">Contact</a><a href="privacy-terms.html">Privacy &amp; Terms</a><div class="mobile-auth"><a href="sign-in.html?mode=login">Log in</a><a href="sign-in.html?mode=signup">Create account</a></div></nav>
+<div class="header-auth"><a class="header-login" href="sign-in.html?mode=login">Log in</a><a class="header-signup" href="sign-in.html?mode=signup">Sign up</a></div>
+</header>
+<main id="contenido" class="info-page">
+ <section class="info-banner"><p class="eyebrow"><span></span> GET IN TOUCH</p><h1>Let's care<br><em>together.</em></h1><p>Tell us what would make caring for your pet easier. Your selected interest stays in this browser in this prototype.</p></section>
+ <section class="contact-layout"><div class="contact-intro"><p class="eyebrow"><span></span> CONTACT PETNOVA</p><h2>What would you like to find?</h2><p>Choose a topic below to save your interest locally. This demonstration does not send messages to an external service.</p><div class="contact-note"><b>Have a suggestion?</b><p>We are shaping PETNOVA around the needs of pets and their people. Your feedback helps us decide what to build next.</p></div></div>
+ <form class="contact-form" id="contactForm"><label for="contactInterest">I'm interested in</label><select id="contactInterest" required><option value="">Choose a topic</option><option>Pet wellness and prevention</option><option>Care profiles and reminders</option><option>Community events and stories</option><option>Responsible adoption</option><option>Services for pets in Panama</option><option>Something else</option></select><button class="btn btn-primary" type="submit">Save my interest <span>&rarr;</span></button><p class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></p><small>Your choice is stored only in this browser. See <a href="privacy-terms.html">Privacy &amp; Terms</a>.</small></form></section>
+ <section class="info-page-cta"><h2>We care for what you love.</h2><a class="btn btn-light" href="index.html#inicio">Back to Home <span>&rarr;</span></a></section>
+</main>
+<footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html#inicio"><img class="brand-logo" src="img/logo%20petnova%20sin%20fondo.png" alt="PETNOVA"></a><p>We care for the animals who make a home with us.</p><nav><a href="index.html#inicio">Home</a><a href="about-us.html">About Us</a><a href="functions.html">Functions</a><a href="contact.html">Contact</a><a href="privacy-terms.html">Privacy &amp; Terms</a></nav></div><div class="footer-bottom"><span>Copyright <span id="contactYear"></span> PETNOVA · Panama</span><span>Made with care for animals.</span></div></footer>
+<script>const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('#mainNav');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));document.querySelector('#contactYear').textContent=new Date().getFullYear();document.querySelector('#contactForm').addEventListener('submit',event=>{event.preventDefault();const interest=document.querySelector('#contactInterest').value;const saved=JSON.parse(localStorage.getItem('petnova-interests')||'[]');saved.push({interest,createdAt:new Date().toISOString()});localStorage.setItem('petnova-interests',JSON.stringify(saved));document.querySelector('#contactFeedback').textContent='Thank you. Your interest was saved in this browser.';event.target.reset()});</script>
+<script src="transiciones.js"></script>
+<script src="menu-animado.js"></script>
+</body></html>
