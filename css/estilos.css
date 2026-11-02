@@ -2205,6 +2205,9 @@ button {
 .legal-content h3 { margin: 22px 0 5px; font: 800 15px var(--round); }
 .legal-content p { color: var(--muted); font-size: 13px; line-height: 1.85; }
 .legal-content .legal-updated,.legal-content .legal-note { font-size: 11px; }
+.legal-content .legal-toc { font-size: 12px; }
+.legal-content .legal-toc a { color: var(--purple); text-decoration: none; font-weight: 600; }
+.legal-content .legal-toc a:hover { text-decoration: underline; }
 .legal-content > .btn { margin-top: 18px; }
 .main-nav a[aria-current="page"] { color: var(--purple); }
 @media (max-width: 760px) {
