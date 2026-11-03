@@ -87,4 +87,5 @@
 <script>const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('#mainNav');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));document.querySelector('#legalYear').textContent=new Date().getFullYear();</script>
 <script src="transiciones.js"></script>
 <script src="menu-animado.js"></script>
+<script src="sticker-footer.js"></script>
 </body></html>
